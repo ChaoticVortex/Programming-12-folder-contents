@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Google AI Challenge</title>
+  <link rel="stylesheet" href="Google%20AI%20Challenge_files/reset.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="Google%20AI%20Challenge_files/typo.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="Google%20AI%20Challenge_files/jquery.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="Google%20AI%20Challenge_files/main.css" type="text/css" media="screen, projection">
+<script src="Google%20AI%20Challenge_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-10883001-6']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+</head>
+<body>
+<div id="main">
+<!-- <div id="wrapper"> -->
+  <div id="header">
+    <div class="grid">
+    <h1>Google AI Challenge</h1>
+    <h2>Organized by the University of Waterloo Computer Science Club and sponsored by Google</h2>
+    <span id="sign">
+              <a href="http://planetwars.aichallenge.org/login.php">Sign In</a> |
+        <a href="http://planetwars.aichallenge.org/register.php">Sign Up</a>
+          </span>
+    </div>
+  </div>
+  <div class="shadow"></div>
+  <div id="content">
+  <div id="news">
+
+<h2>Problem Description</h2>
+<p>The objective is to create a computer program that plays the game of Planet
+  Wars as intelligently as possible. It is recommended that you use one of the
+  <a href="http://planetwars.aichallenge.org/starter_packages.php">starter packages</a> as a starting point. If
+  you are looking to get up and running as quickly as possible, check out the
+   <a href="http://planetwars.aichallenge.org/quickstart.php">Five Minute Quickstart Guide</a>. For more details
+  about Planet Wars beyond this introductory document, see the
+  <a href="http://planetwars.aichallenge.org/specification.php">Planet Wars Specification</a>.</p>
+<p>Planet Wars is a strategy game set in outer space. The objective is to
+  take over all the planets on the map, or altenatively eliminate all of
+  your opponents ships.</p>
+<center><object height="405" width="500"><param name="movie" value="http://www.youtube.com/v/O0uxXZY-t-s&amp;hl=en_US&amp;fs=1?border=1"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="Google%20AI%20Challenge_files/O0uxXZY-t-shlen_USfs1.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" height="405" width="500"></object></center>
+<p></p>
+<p>Planet Wars is inspired by Galcon, a popular iPhone and desktop strategy
+  game. A huge thank-you goes out to the creator of Galcon, Phil Hassey, for
+  letting us use his idea. You can play Galcon online against other people for
+  free <a href="http://www.galcon.com/flash/">here</a>. The Galcon
+  homepage is <a href="http://www.galcon.com/">here</a>. If you love Galcon
+  as much as we do, then consider buying it!</p>
+<center><a href="http://www.galcon.com/">
+  <img src="Google%20AI%20Challenge_files/galcon_fusion_logo.png">
+</a></center>
+<p>The game is turn-based. Your bot is a function that takes a list of planets
+  and a list of fleets, and outputs some orders. Each planet has the following
+  fields/properties:</p>
+<ul>
+  <li>X-coordinate</li>
+  <li>Y-coordinate</li>
+  <li>Owner's PlayerID</li>
+  <li>Number of Ships</li>
+  <li>Growth Rate</li>
+</ul>
+<p>Neutral planets have a PlayerID of zero, planets owned by your bot have a
+  PlayerID of 1, and planets owned by the enemy have a PlayerID of 2. The
+  number of ships and the growth rate are both whole numbers. Each turn, the
+  number of ships on non-neutral planets increases according to the growth
+  rate for that planet.</p>
+<p>Fleets are the colored numbers that fly between planets. When a fleet
+  arrives at its destination planet, one of two things can happen. If the
+  destination planet belongs to your bot, the ships from the fleet land on
+  the planet as reinforcements. If your bot does not own the destination
+  planet, the ships from the fleet are subtracted from the ships that
+  currently occupy the planet. If the result is less than zero, then your
+  bot gains control of the planet. If the result is exactly zero, then
+  control of the planet does not change hands. A fleet has the following
+  properties:</p>
+<ul>
+  <li>Owner's PlayerID</li>
+  <li>Number of Ships</li>
+  <li>Source PlanetID</li>
+  <li>Destination PlanetID</li>
+  <li>Total Trip Length</li>
+  <li>Number of turns remaining until arrival</li>
+</ul>
+<p>Your bot can issue as many orders as it wants during one turn. Each order
+  specifies a source planet, a destination planet, and a number of ships.
+  Once the order is executed, the given number of ships leave the source
+  planet, to go towards the destination planet. Your bot issues orders using
+  the IssueOrder(src, dest, num_ships) function. See the starter packages
+  for an example that you can use as a starting point.</p>
+<p>The game ends when only one player remains, or if the game goes past a
+  certain number of turns.</p>
+
+    </div>
+    <div id="sidebar">
+    <h1>Overview</h1>
+    <ul>
+      <li><a href="http://planetwars.aichallenge.org/index.php">Home</a></li>
+      <li><a href="http://planetwars.aichallenge.org/rankings.php">Current Rankings</a></li>
+      <li><a href="http://planetwars.aichallenge.org/problem_description.php">Problem Description</a></li>
+      <li><a href="http://planetwars.aichallenge.org/rules.php">Contest Rules</a></li>
+    </ul>
+        <h1>Getting Started</h1>
+    <ul>
+      <li><a href="http://planetwars.aichallenge.org/register.php">Create Your Account</a></li>
+      <li><a href="http://planetwars.aichallenge.org/quickstart.php">Five Minute Quickstart Guide</a></li>
+      <li><a href="http://planetwars.aichallenge.org/starter_packages.php">Starter Packages</a></li>
+      <li><a href="http://planetwars.aichallenge.org/resources.php">Tutorials &amp; Strategy Guides</a></li>
+      <li><a href="http://planetwars.aichallenge.org/specification.php">Planet Wars Specification</a></li>
+    </ul>
+    <h1>Help</h1>
+    <ul>
+      <li><a href="http://planetwars.aichallenge.org/faq.php">Frequently Asked Questions</a></li>
+      <li><a href="http://forums.aichallenge.org/">Forums</a></li>
+    </ul>
+    <h1>Galcon</h1>
+    <ul>
+      <li><a href="http://www.galcon.com/">Galcon Home</a></li>
+      <li><a href="http://www.galcon.com/fusion/">Galcon for Desktop</a></li>
+      <li><a href="http://www.galcon.com/iphone/">Galcon for iPhone</a></li>
+      <li><a href="http://www.galcon.com/flash">Play Galcon Online for
+        Free</a></li>
+    </ul>
+    <form name="user_search_form" method="get" action="find_user.php">
+        Search for user:
+        <input name="username" style="width: 10em" type="text">
+        <input name="search" value="Go" type="submit">
+    </form>
+  </div>
+    </div>
+
+	<div id="footer"></div>
+<!-- /div -->
+</div>
+
+
+
+</body></html>
